@@ -10,9 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // Interface builder outlet - IBOutlet
+    // Main.storyboard - interface builder
+    @IBOutlet weak var diceImageViewLeft: UIImageView!
+    @IBOutlet weak var diceImageViewRight: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        diceImageViewLeft.image = UIImage(named: "DiceSix")
+        
+        // Challenge completion code, which is optional
+        // diceImageViewLeft.alpha = 0.5
+        
+        diceImageViewRight.image = UIImage(named: "DiceTwo")
     }
 
 
