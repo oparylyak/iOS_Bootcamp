@@ -17,16 +17,19 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        diceImageViewLeft.image = UIImage(named: "DiceSix")
-        
-        // Challenge completion code, which is optional
-        // diceImageViewLeft.alpha = 0.5
-        
-        diceImageViewRight.image = UIImage(named: "DiceTwo")
     }
 
-
+    @IBAction func rollButtonPressed(_ sender: UIButton) {
+        diceImageViewLeft.image = UIImage(named: getRandomDiceName())
+        diceImageViewRight.image = UIImage(named: getRandomDiceName())
+    }
+    
+    private func getRandomDiceName() -> String {
+        let dices = ["One", "Two", "Three", "Four", "Five", "Six"]
+        let randomDiceNumber = dices.randomElement() ?? "One"
+        let randomDice = "Dice\(randomDiceNumber)"
+        
+        return randomDice
+    }
 }
 
